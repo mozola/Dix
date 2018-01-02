@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="helloworld" extends="struts-default">
+
+		<action name="loginForm">
+			<result>/WEB-INF/pages/form.jsp</result>
+		</action>
+		
+		<action name="newUser">
+			<result>/WEB-INF/pages/new_user.jsp</result>
+		</action>
+
+		<action name="home" class="com.dix.actions.ArticlesAction" method="execute"> 
+			<result name="allArticles">/WEB-INF/pages//main.jsp</result>
+		</action>
+
+		<action name="newRecipe">
+			<result>/WEB-INF/pages//recipeForm.jsp</result>
+		</action>
+		
+		<action name="newArticle">
+			<result>/WEB-INF/pages//new_article.jsp</result>
+		</action>
+		
+
+		<action name="newExercise">
+			<result>/WEB-INF/pages//newExercise.jsp</result>
+		</action>
+
+		<action name="newExerciseDone" class="com.dix.actions.NewExerciseAction"
+			method="execute">
+			<result name="newExerciseDone">/WEB-INF/pages//newExerciseDone.jsp</result>
+		</action>
+
+		<action name="loginRequest" class="com.dix.actions.LoginFormAction" method="login">
+			<result name = "loginPass">/WEB-INF/pages//index.jsp</result>
+			<result name = "loginFail ">/WEB-INF/pages//form.jsp</result>
+		</action>
+		
+		
+		<action name="loginRegisterRequest" class="com.dix.actions.RegisterRequest" method="execute">
+			<result name="succed">/WEB-INF/pages//register_result.jsp</result>
+		</action>
+
+
+		<action name="newRecipeDone" class="com.dix.actions.NewRecipseAction"
+			method="execute">
+			<result name="newRecipeDone">/WEB-INF/pages//newRecipeDone.jsp</result>
+		</action>
+		
+		
+		<action name="articleAdded" class="com.dix.actions.ArticlesAction"
+			method="createNewArticle">
+			<result name="createNewArticle">/WEB-INF/pages//newArticleCreated .jsp</result>
+		</action>
+		
+	</package>
+</struts>
